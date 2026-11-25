@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fiche mémo — La déontologie du conseiller</title>
+<style>
+:root{--prune:#8C1E70;--prune-fonce:#5E1349;--prune-clair:#F4E6EE;--accent:#C77BAA;
+ --vert:#283C28;--gris:#3C3C3C;--gris-moyen:#8A7A85;--filet:#E8DCE5;--creme:#FAF6F8;
+ --ok:#2F7A4F;--ko:#B23B3B;--amb:#B5852A;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--creme);color:var(--gris);
+ font-family:"Nunito","Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.62}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px 60px}
+header.bandeau{background:var(--prune-fonce);color:#fff;padding:18px 0;border-bottom:4px solid var(--accent)}
+header.bandeau .wrap{padding-bottom:0}
+.chapitre{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#EAD3E3}
+.chapitre span{color:var(--accent);margin:0 6px}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:27px;line-height:1.25;margin:8px 0 4px;color:#fff}
+.sous{color:#EAD3E3;font-size:14.5px;margin:0}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:20px;color:var(--prune-fonce);
+ margin:34px 0 0;padding-bottom:8px;border-bottom:2px solid var(--filet)}
+h2 .num{color:var(--accent);margin-right:8px}
+h3{font-size:15px;color:var(--vert);margin:20px 0 8px;letter-spacing:.02em}
+.carte{background:#fff;border:1px solid var(--filet);border-radius:10px;padding:20px 22px;margin:18px 0;
+ box-shadow:0 1px 2px rgba(94,19,73,.05)}
+.enc{background:var(--prune-clair);border-left:5px solid var(--prune);padding:14px 18px;
+ border-radius:0 8px 8px 0;margin:18px 0;font-size:15.2px}
+.enc .t{display:block;font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;
+ font-weight:800;color:var(--prune-fonce);margin-bottom:6px}
+.enc.al{background:#FBF4F4;border-left-color:var(--ko)}.enc.al .t{color:var(--ko)}
+.enc.ci{background:#FCF8F0;border-left-color:var(--amb)}.enc.ci .t{color:#8A6418}
+.situ{background:#FCF9FB;border:1px dashed var(--filet);border-radius:8px;padding:16px 18px;margin:16px 0;font-size:15.2px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.duo>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:15px 17px;font-size:14.8px}
+.duo .h{font-weight:800;color:var(--prune-fonce);margin-bottom:7px;font-size:14.5px}
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.tri>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:14px 15px;font-size:14.3px}
+.quad{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+.quad>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:12px 13px;font-size:13.6px}
+.quad .h{font-weight:800;color:var(--prune-fonce);margin-bottom:6px;font-size:13px;
+ text-transform:uppercase;letter-spacing:.04em}
+.tri .h{font-weight:800;color:var(--prune-fonce);margin-bottom:6px;font-size:13.5px;
+ text-transform:uppercase;letter-spacing:.05em}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.8px;background:#fff}
+th,td{border:1px solid var(--filet);padding:9px 12px;text-align:left}
+thead th{background:var(--prune-clair);color:var(--prune-fonce);font-size:13.5px}
+tbody th{font-weight:600;color:var(--gris)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.tot td,tr.tot th{background:#FBF3F8;font-weight:800;color:var(--prune-fonce)}
+.dl{display:inline-flex;align-items:center;gap:9px;background:var(--prune);color:#fff;text-decoration:none;
+ padding:11px 20px;border-radius:8px;font-weight:700;font-size:15px;margin:20px 0 4px}
+.dl:hover{background:var(--prune-fonce)}
+ol.q{padding-left:0;list-style:none;counter-reset:q}
+ol.q>li{margin:16px 0;padding-left:38px;position:relative}
+ol.q>li::before{counter-increment:q;content:counter(q);position:absolute;left:0;top:1px;
+ width:26px;height:26px;border-radius:50%;background:var(--prune-clair);color:var(--prune-fonce);
+ font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+b,strong{color:var(--vert)}
+footer{text-align:center;font-size:12.5px;color:var(--gris-moyen);padding:26px 18px 12px;
+ border-top:1px solid var(--filet);margin-top:44px}
+@media(max-width:860px){.quad{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.duo,.tri,.quad{grid-template-columns:1fr}h1{font-size:22px}}
+@media print{body{background:#fff}.dl{display:none}header.bandeau{background:#5E1349 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+td{vertical-align:top}td:first-child{white-space:nowrap}.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}.tri>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:14px 15px;font-size:14.3px}.tri .h,.duo .h{font-weight:800;color:var(--prune-fonce);margin-bottom:6px;font-size:13.5px;text-transform:uppercase;letter-spacing:.05em}.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}.duo>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:15px 17px;font-size:14.8px}@media(max-width:640px){.tri,.duo{grid-template-columns:1fr}}.enc,tr,.tri,.duo{break-inside:avoid}</style></head>
+<body>
+<header class="bandeau"><div class="wrap">
+ <div class="chapitre">Éthique et déontologie <span>/</span> Module 1</div><h1>La déontologie du conseiller</h1><p class="sous">Fiche mémo — transparence, devoir de conseil, mise en garde, conseil négatif, confidentialité, secret</p>
+</div></header>
+<div class="wrap">
+<a class="dl" href="ETHIQUE_M1_Fiche_memo.pdf" download>⬇ Télécharger la fiche mémo (PDF)</a>
+<h2><span class="num">1 ·</span>Éthique, déontologie, conformité</h2>
+<div class="carte">
+<div class="tri"><div><div class="h">Éthique</div>Ce qui est juste. Elle guide quand la règle ne dit rien.</div><div><div class="h">Déontologie</div>Les devoirs propres à une profession, écrits dans des textes et des codes de conduite.</div><div><div class="h">Conformité</div>Le respect effectif des règles, organisé et contrôlé par une fonction dédiée.</div></div>
+<div class="enc"><span class="t">ARTICLE L. 519-4-1 CMF</span>L'IOBSP se comporte « d'une manière honnête, équitable, transparente et professionnelle, en tenant compte des droits et des intérêts des clients ». Même exigence pour les distributeurs d'assurance (art. L. 521-1 C. assur.) et pour les services d'investissement (art. L. 533-11 CMF).</div>
+</div>
+<h2><span class="num">2 ·</span>La transparence</h2>
+<div class="carte">
+<p>Donner au client, <b>avant qu'il ne s'engage</b>, une information claire, exacte et non trompeuse sur le professionnel, le produit, son coût, ses risques et la rémunération du conseiller.</p>
+<table><thead><tr><th>Domaine</th><th>Ce que le client reçoit</th></tr></thead><tbody>
+<tr><td><b>IOBSP</b></td><td>Identité, n° ORIAS, catégorie, établissements partenaires ou exclusivité, liens financiers, rémunération, procédure de réclamation — avant toute prestation, sur support durable (art. R. 519-20 et s. CMF).</td></tr>
+<tr><td><b>Crédit</b></td><td>FISE (crédit immobilier) ou fiche précontractuelle (crédit à la consommation), <b>TAEG</b> et coût total.</td></tr>
+<tr><td><b>Assurance (DDA)</b></td><td>Nature de la rémunération, conseil ou non, IPID en non-vie, DIC pour les produits d'investissement.</td></tr>
+<tr><td><b>Placements (MIF 2)</b></td><td>Information ex ante et annuelle sur tous les coûts et frais, rétrocessions comprises.</td></tr>
+</tbody></table>
+<div class="enc ci"><span class="t">LES CONFLITS D'INTÉRÊTS</span>Identifier, prévenir et gérer d'abord ; informer le client seulement si les mesures ne suffisent pas. L'information est un dernier recours, pas un blanc-seing.</div>
+</div>
+<h2><span class="num">3 ·</span>Le devoir de conseil</h2>
+<div class="carte">
+<p>Proposer une solution <b>adaptée</b> à la situation, aux besoins et aux objectifs du client, après les avoir recueillis, et dire <b>pourquoi</b> elle convient.</p>
+<table><thead><tr><th>Étape</th><th>Ce que fait le conseiller</th><th>La preuve</th></tr></thead><tbody>
+<tr><td>1. Recueillir</td><td>Situation familiale et professionnelle, revenus, charges, patrimoine, projet, horizon, tolérance au risque.</td><td>Fiche de recueil signée</td></tr>
+<tr><td>2. Proposer</td><td>Une solution cohérente avec les besoins exprimés.</td><td>Proposition écrite</td></tr>
+<tr><td>3. Motiver</td><td>Pourquoi cette solution, et ses limites.</td><td>Document de conseil</td></tr>
+</tbody></table>
+<div class="enc"><span class="t">EN CRÉDIT</span>Devoir d'<b>explications</b> pour que l'emprunteur vérifie que le crédit est adapté, et <b>évaluation de la solvabilité</b> par le prêteur, sur la base d'informations vérifiées (art. L. 312-14 et L. 312-16 C. consom. pour le crédit à la consommation ; dispositions équivalentes pour le crédit immobilier).</div>
+</div>
+<h2><span class="num">4 ·</span>Le devoir de mise en garde</h2>
+<div class="carte">
+<div class="duo"><div><div class="h">Ce qu'il impose</div>Alerter l'emprunteur <b>non averti</b> sur le <b>risque d'endettement excessif</b> au regard de ses capacités financières, avant l'octroi du crédit. Il s'applique aussi à la caution non avertie.</div><div><div class="h">D'où il vient</div>De la jurisprudence : Cass., ch. mixte, 29 juin 2007. Pas dû à l'emprunteur averti, sauf information que le prêteur détient et qu'il ignore. Sanction : réparation de la <b>perte de chance</b> de ne pas contracter.</div></div>
+<table><thead><tr><th>Obligation</th><th>La question à se poser</th></tr></thead><tbody>
+<tr><td><b>Information</b></td><td>Le client sait-il ce qu'il achète ?</td></tr>
+<tr><td><b>Conseil</b></td><td>Le produit répond-il à son besoin ?</td></tr>
+<tr><td><b>Mise en garde</b></td><td>Ce crédit risque-t-il de le mettre en difficulté ?</td></tr>
+<tr><td><b>Conseil négatif</b></td><td>Dois-je lui déconseiller l'opération ?</td></tr>
+</tbody></table>
+</div>
+<h2><span class="num">5 ·</span>Le conseil négatif</h2>
+<div class="carte">
+<p><b>Déconseiller</b> un produit ou une opération qui ne convient pas, même si le client le demande et même si la vente intéresserait le conseiller. Le terme n'est pas dans les textes : il découle du devoir de conseil et de l'obligation d'agir au mieux des intérêts du client.</p>
+<div class="enc al"><span class="t">SI LE CLIENT INSISTE</span>Il reste libre. Exposer clairement les raisons et les risques, <b>formaliser la mise en garde par écrit</b>, ne jamais présenter comme adapté ce qui ne l'est pas, et savoir refuser quand la règle l'impose (solvabilité non établie).</div>
+</div>
+<h2><span class="num">6 ·</span>Confidentialité et secret professionnel</h2>
+<div class="carte">
+<div class="duo"><div><div class="h">La confidentialité</div>Les comportements qui empêchent une information client d'être vue, entendue ou transmise à qui n'a pas à la connaître : session verrouillée, entretien au calme, authentification au téléphone, messagerie sécurisée, aucune consultation par curiosité.</div><div><div class="h">Le secret bancaire</div>Obligation légale des dirigeants et salariés d'établissements de crédit (art. L. 511-33 CMF). Violation : <b>1 an et 15 000 €</b> (art. 226-13 C. pén.). Le client peut le lever à son profit.</div></div>
+<p>Le secret <b>n'est pas opposable</b> à l'autorité judiciaire en matière pénale, à l'ACPR, à la Banque de France, à l'administration fiscale et aux douanes, ni à TRACFIN. Les demandes passent toujours par le service habilité.</p>
+<div class="enc ci"><span class="t">ET L'IOBSP ?</span>Il n'est pas directement visé par l'article L. 511-33, mais il est tenu à la confidentialité par son mandat, le RGPD et sa déontologie, et il manie des informations couvertes par le secret de ses partenaires. Même réflexe : rien à un tiers sans l'accord du client.</div>
+</div>
+<h2><span class="num">7 ·</span>Ce qui tombe à l'examen</h2>
+<div class="carte">
+<ol class="q"><li>L'information précontractuelle de l'IOBSP est due avant toute prestation, sur support durable.</li><li>Le devoir de mise en garde est dû à l'emprunteur non averti, sur le risque d'endettement excessif.</li><li>Le devoir de conseil repose sur un recueil préalable des besoins, signé : c'est la seule preuve.</li><li>Le conseil négatif : déconseiller, tracer, et refuser si la solvabilité n'est pas établie.</li><li>Secret bancaire : art. L. 511-33 CMF, sanction de l'art. 226-13 C. pén. (1 an, 15 000 €).</li></ol>
+</div>
+
+<footer>TMK Performances - N° Siret : 49841924100027 - Code NAF : 8559A</footer>
+</div>
+</body></html>
